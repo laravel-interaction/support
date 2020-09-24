@@ -1,0 +1,34 @@
+{
+    "name": "laravel-interaction/support",
+    "description": "The Laravel Interaction Support package",
+    "keywords": ["laravel", "interaction", "support"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "zingimmick",
+            "email": "zingimmick@outlook.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true,
+        "preferred-install": "dist"
+    },
+    "require": {
+        "php": "^7.2"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "LaravelInteraction\\Support\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "LaravelInteraction\\Support\\Tests\\": "tests"
+        }
+    }
+}
