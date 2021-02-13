@@ -12,9 +12,6 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $parameters->set(
         Option::SETS,
         [
-            SetList::PHP_70,
-            SetList::PHP_71,
-            SetList::DEAD_CODE,
             SetList::CLEAN_CODE,
             SetList::COMMON,
             SetList::PSR_12,

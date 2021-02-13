@@ -9,8 +9,6 @@
             "email": "zingimmick@outlook.com"
         }
     ],
-    "minimum-stability": "dev",
-    "prefer-stable": true,
     "config": {
         "sort-packages": true,
         "preferred-install": "dist"
@@ -19,8 +17,8 @@
         "php": "^7.2 || ^8.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^7.5.15 || ^8.4 || ^9.3.3",
-        "zing/coding-standard": "^2.4"
+        "phpunit/phpunit": "^8.0,<8.5.12 || ^9.3.3",
+        "zing/coding-standard": "^2.4 || ^3.2"
     },
     "autoload": {
         "psr-4": {
@@ -35,6 +33,7 @@
     "scripts": {
         "lint:rector": "@fix:rector --dry-run",
         "lint:ecs": "ecs check --ansi",
+        "lint:phpstan": "phpstan analyse --ansi",
         "fix:rector": "rector process --ansi",
         "fix:ecs": "@lint:ecs --fix",
         "test:phpunit": "phpunit --colors=always",
@@ -49,5 +48,7 @@
         "test": [
             "@test:phpunit"
         ]
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }

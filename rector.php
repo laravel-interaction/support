@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 use Rector\Core\Configuration\Option;
 use Rector\PHPUnit\Rector\Class_\AddSeeTestAnnotationRector;
+use Rector\Privatization\Rector\Class_\ChangeReadOnlyVariableWithDefaultValueToConstantRector;
+use Rector\Privatization\Rector\Class_\FinalizeClassesWithoutChildrenRector;
 use Rector\Set\ValueObject\SetList;
-use Rector\SOLID\Rector\Class_\ChangeReadOnlyVariableWithDefaultValueToConstantRector;
-use Rector\SOLID\Rector\Class_\FinalizeClassesWithoutChildrenRector;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 
 return static function (ContainerConfigurator $containerConfigurator): void {
@@ -16,9 +16,9 @@ return static function (ContainerConfigurator $containerConfigurator): void {
         [
             SetList::ACTION_INJECTION_TO_CONSTRUCTOR_INJECTION,
             SetList::ARRAY_STR_FUNCTIONS_TO_STATIC_CALL,
-            SetList::PHPSTAN,
+            SetList::CODING_STYLE,
             SetList::PHPUNIT_CODE_QUALITY,
-            SetList::SOLID,
+            SetList::PRIVATIZATION,
             SetList::DOCTRINE_CODE_QUALITY,
             SetList::DEAD_CODE,
             SetList::CODE_QUALITY,
@@ -28,10 +28,11 @@ return static function (ContainerConfigurator $containerConfigurator): void {
         ]
     );
     $parameters->set(
-        Option::EXCLUDE_RECTORS,
+        Option::SKIP,
         [
             FinalizeClassesWithoutChildrenRector::class,
             ChangeReadOnlyVariableWithDefaultValueToConstantRector::class,
+            AddSeeTestAnnotationRector::class,
             AddSeeTestAnnotationRector::class,
         ]
     );
