@@ -6,7 +6,7 @@ namespace LaravelInteraction\Support;
 
 class Interaction
 {
-    public static function numberForHuman(int $number, int $precision = 1, int $mode = PHP_ROUND_HALF_UP, array $divisorMap = []): string
+    public static function numberForHumans(int $number, int $precision = 1, int $mode = PHP_ROUND_HALF_UP, array $divisorMap = []): string
     {
         $divisors = array_filter(
             array_keys($divisorMap),
