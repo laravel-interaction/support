@@ -14,7 +14,7 @@
 Require Laravel Interaction Support package using [Composer](https://getcomposer.org):
 
 ```bash
-composer create-project laravel-interaction/support --prefer-source php-package
+composer require laravel-interaction/support
 ```
 
 ## License
