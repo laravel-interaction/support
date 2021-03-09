@@ -49,6 +49,8 @@ class InteractionTest extends TestCase
         self::assertSame($onePrecision, Interaction::numberForHumans($actual, 1, PHP_ROUND_HALF_UP, $divisors));
         self::assertSame($twoPrecision, Interaction::numberForHumans($actual, 2, PHP_ROUND_HALF_UP, $divisors));
         self::assertSame($halfDown, Interaction::numberForHumans($actual, 2, PHP_ROUND_HALF_DOWN, $divisors));
+        Interaction::divisorMap($divisors);
+        self::assertSame($halfDown, Interaction::numberForHumans($actual, 2, PHP_ROUND_HALF_DOWN));
         self::assertSame(
             $universalSuffix,
             Interaction::numberForHumans(
