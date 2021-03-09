@@ -8,8 +8,15 @@ PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLi
 
 <!-- changelog-linker -->
 
+## Unreleased
+
+### Added
+
+- [#3] Add default divisors
+
 ### Changed
 
 - [#2] Allow float for numberForHumans
 
 [#2]: https://github.com/laravel-interaction/support/pull/2
+[#3]: https://github.com/laravel-interaction/support/pull/3
