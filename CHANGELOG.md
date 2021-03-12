@@ -8,13 +8,13 @@ PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLi
 
 <!-- changelog-linker -->
 
+## Unreleased
+
 ## [0.1.3] - 2021-03-12
 
 ### Removed
 
 - [#6] Remove kodiak and enable github auto-merge
-
-## Unreleased
 
 ## [0.1.2] - 2021-03-09
 
