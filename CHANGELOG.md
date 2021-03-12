@@ -10,13 +10,24 @@ PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLi
 
 ## Unreleased
 
+## [0.1.2] - 2021-03-09
+
 ### Added
 
 - [#3] Add default divisors
+
+## [0.1.1] - 2021-02-26
 
 ### Changed
 
 - [#2] Allow float for numberForHumans
 
-[#2]: https://github.com/laravel-interaction/support/pull/2
+- [#5] Bump codecov/codecov-action from v1.2.1 to v1.2.2
+- [#4] Generate changelog, Thanks to [@github-actions][bot]
+
+[#5]: https://github.com/laravel-interaction/support/pull/5
+[#4]: https://github.com/laravel-interaction/support/pull/4
 [#3]: https://github.com/laravel-interaction/support/pull/3
+[#2]: https://github.com/laravel-interaction/support/pull/2
+[@github-actions]: https://github.com/github-actions
+[0.1.2]: https://github.com/laravel-interaction/support/compare/0.1.1...0.1.2
