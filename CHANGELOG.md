@@ -10,6 +10,12 @@ PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLi
 
 ## Unreleased
 
+## [0.1.3] - 2021-03-12
+
+### Removed
+
+- [#6] Remove kodiak and enable github auto-merge
+
 ## [0.1.2] - 2021-03-09
 
 ### Added
@@ -31,3 +37,5 @@ PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLi
 [#2]: https://github.com/laravel-interaction/support/pull/2
 [@github-actions]: https://github.com/github-actions
 [0.1.2]: https://github.com/laravel-interaction/support/compare/0.1.1...0.1.2
+[#6]: https://github.com/laravel-interaction/support/pull/6
+[0.1.3]: https://github.com/laravel-interaction/support/compare/0.1.2...0.1.3
