@@ -1,7 +1,7 @@
 name: Rector
 
 on:
-  pull_request:
+  push:
 
 jobs:
   rector:
