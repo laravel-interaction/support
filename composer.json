@@ -26,6 +26,11 @@
             "LaravelInteraction\\Support\\": "src"
         }
     },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.3-dev"
+        }
+    },
     "autoload-dev": {
         "psr-4": {
             "LaravelInteraction\\Support\\Tests\\": "tests"
