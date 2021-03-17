@@ -17,9 +17,7 @@
         "php": "^7.2 || ^8.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^8.0,<8.5.12 || ^9.3.3",
-        "symplify/changelog-linker": "^8.3 || ^9.2",
-        "zing/coding-standard": "^2.6 || ^3.2"
+        "phpunit/phpunit": "^8.0,<8.5.12 || ^9.3.3"
     },
     "autoload": {
         "psr-4": {
@@ -35,30 +33,6 @@
         "psr-4": {
             "LaravelInteraction\\Support\\Tests\\": "tests"
         }
-    },
-    "scripts": {
-        "lint:rector": "@fix:rector --dry-run",
-        "lint:ecs": "ecs check --ansi",
-        "lint:phpstan": "phpstan analyse --ansi",
-        "fix:rector": "rector process --ansi",
-        "fix:ecs": "@lint:ecs --fix",
-        "test:phpunit": "phpunit --colors=always",
-        "lint": [
-            "@lint:rector",
-            "@lint:ecs"
-        ],
-        "fix": [
-            "@fix:rector",
-            "@fix:ecs"
-        ],
-        "test": [
-            "@test:phpunit"
-        ],
-        "changelog": [
-            "changelog-linker dump-merges --ansi",
-            "changelog-linker link --ansi",
-            "changelog-linker cleanup --ansi"
-        ]
     },
     "minimum-stability": "dev",
     "prefer-stable": true
