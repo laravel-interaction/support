@@ -53,14 +53,9 @@ class InteractionTest extends TestCase
         self::assertSame($halfDown, Interaction::numberForHumans($actual, 2, PHP_ROUND_HALF_DOWN));
         self::assertSame(
             $universalSuffix,
-            Interaction::numberForHumans(
-                $actual,
-                2,
-                PHP_ROUND_HALF_DOWN,
-                [
-                    1 => 'a',
-                ]
-            )
+            Interaction::numberForHumans($actual, 2, PHP_ROUND_HALF_DOWN, [
+                1 => 'a',
+            ])
         );
     }
 }
