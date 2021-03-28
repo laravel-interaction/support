@@ -21,8 +21,12 @@ class Interaction
         self::$divisorMap = $divisorMap;
     }
 
-    public static function numberForHumans($number, int $precision = 1, int $mode = PHP_ROUND_HALF_UP, array $divisorMap = []): string
-    {
+    public static function numberForHumans(
+        $number,
+        int $precision = 1,
+        int $mode = PHP_ROUND_HALF_UP,
+        array $divisorMap = []
+    ): string {
         $divisorMap = $divisorMap ?: self::$divisorMap;
         $divisors = array_filter(
             array_keys($divisorMap),
