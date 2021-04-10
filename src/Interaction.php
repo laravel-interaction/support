@@ -6,6 +6,9 @@ namespace LaravelInteraction\Support;
 
 class Interaction
 {
+    /**
+     * @var string[]
+     */
     private static $divisorMap = [
         1000 ** 0 => '',
         1000 ** 1 => 'K',
@@ -16,11 +19,19 @@ class Interaction
         1000 ** 6 => 'Qi',
     ];
 
-    public static function divisorMap($divisorMap): void
+    public static function divisorMap(array $divisorMap): void
     {
         self::$divisorMap = $divisorMap;
     }
 
+    /**
+     * @param int|float $number
+     * @param int $precision
+     * @param int $mode
+     * @param array $divisorMap
+     *
+     * @return string
+     */
     public static function numberForHumans(
         $number,
         int $precision = 1,

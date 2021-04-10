@@ -3,9 +3,13 @@
 namespace LaravelInteraction\Support;
 
 use Illuminate\Support\ServiceProvider;
+use ReflectionClass;
 
 abstract class InteractionServiceProvider extends ServiceProvider
 {
+    /**
+     * @var string
+     */
     protected $interaction;
 
     public function boot(): void
@@ -49,10 +53,15 @@ abstract class InteractionServiceProvider extends ServiceProvider
         return (bool) config($this->interaction . '.load_migrations');
     }
 
-    private function path(): string
+    private function path(): ?string
     {
-        $reflectionClass = new \ReflectionClass(static::class);
+        $reflectionClass = new ReflectionClass(static::class);
 
-        return dirname($reflectionClass->getFileName());
+        $fileName = $reflectionClass->getFileName();
+        if ($fileName === false) {
+            return null;
+        }
+
+        return dirname($fileName);
     }
 }
