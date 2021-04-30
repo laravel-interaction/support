@@ -17,4 +17,6 @@ class InteractionList
     public const FAVORITE = 'favorite';
 
     public const FOLLOW = 'follow';
+
+    public const CLAP = 'clap';
 }
