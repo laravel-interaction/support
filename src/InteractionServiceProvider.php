@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace LaravelInteraction\Support;
 
 use Illuminate\Support\ServiceProvider;
