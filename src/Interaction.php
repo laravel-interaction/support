@@ -26,11 +26,6 @@ class Interaction
 
     /**
      * @param int|float $number
-     * @param int $precision
-     * @param int $mode
-     * @param array $divisorMap
-     *
-     * @return string
      */
     public static function numberForHumans(
         $number,
