@@ -31,7 +31,7 @@ class Interaction
         $number,
         int $precision = 1,
         int $mode = PHP_ROUND_HALF_UP,
-        array $divisorMap = []
+        ?array $divisorMap = []
     ): string {
         $divisorMap = $divisorMap ?: self::$divisorMap;
         $divisors = array_filter(
