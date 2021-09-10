@@ -21,4 +21,6 @@ class InteractionList
     public const FOLLOW = 'follow';
 
     public const CLAP = 'clap';
+
+    public const BLOCK = 'block';
 }
