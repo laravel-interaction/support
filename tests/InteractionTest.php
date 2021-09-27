@@ -8,6 +8,19 @@ use LaravelInteraction\Support\Interaction;
 
 class InteractionTest extends TestCase
 {
+    /**
+     * @var array<int, string>
+     */
+    private const DIVISORS = [
+        1000 ** 0 => '',
+        1000 ** 1 => 'K',
+        1000 ** 2 => 'M',
+        1000 ** 3 => 'B',
+        1000 ** 4 => 'T',
+        1000 ** 5 => 'Qa',
+        1000 ** 6 => 'Qi',
+    ];
+
     public function data(): array
     {
         return [
@@ -37,19 +50,10 @@ class InteractionTest extends TestCase
      */
     public function testNumberForHuman($actual, $onePrecision, $twoPrecision, $halfDown, $universalSuffix): void
     {
-        $divisors = [
-            1000 ** 0 => '',
-            1000 ** 1 => 'K',
-            1000 ** 2 => 'M',
-            1000 ** 3 => 'B',
-            1000 ** 4 => 'T',
-            1000 ** 5 => 'Qa',
-            1000 ** 6 => 'Qi',
-        ];
-        self::assertSame($onePrecision, Interaction::numberForHumans($actual, 1, PHP_ROUND_HALF_UP, $divisors));
-        self::assertSame($twoPrecision, Interaction::numberForHumans($actual, 2, PHP_ROUND_HALF_UP, $divisors));
-        self::assertSame($halfDown, Interaction::numberForHumans($actual, 2, PHP_ROUND_HALF_DOWN, $divisors));
-        Interaction::divisorMap($divisors);
+        self::assertSame($onePrecision, Interaction::numberForHumans($actual, 1, PHP_ROUND_HALF_UP, self::DIVISORS));
+        self::assertSame($twoPrecision, Interaction::numberForHumans($actual, 2, PHP_ROUND_HALF_UP, self::DIVISORS));
+        self::assertSame($halfDown, Interaction::numberForHumans($actual, 2, PHP_ROUND_HALF_DOWN, self::DIVISORS));
+        Interaction::divisorMap(self::DIVISORS);
         self::assertSame($halfDown, Interaction::numberForHumans($actual, 2, PHP_ROUND_HALF_DOWN));
         self::assertSame(
             $universalSuffix,
