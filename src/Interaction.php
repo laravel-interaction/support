@@ -19,6 +19,9 @@ class Interaction
         1000 ** 6 => 'Qi',
     ];
 
+    /**
+     * @param string[] $divisorMap
+     */
     public static function divisorMap(array $divisorMap): void
     {
         self::$divisorMap = $divisorMap;
@@ -36,7 +39,7 @@ class Interaction
         $divisorMap = $divisorMap ?: self::$divisorMap;
         $divisors = array_filter(
             array_keys($divisorMap),
-            static function ($divisor) use ($number) {
+            static function ($divisor) use ($number): bool {
                 return $divisor <= abs($number);
             }
         );
