@@ -7,7 +7,7 @@ namespace LaravelInteraction\Support;
 class Interaction
 {
     /**
-     * @var string[]
+     * @var array<int, string>
      */
     private static $divisorMap = [
         1000 ** 0 => '',
@@ -20,7 +20,7 @@ class Interaction
     ];
 
     /**
-     * @param string[] $divisorMap
+     * @param array<int, string> $divisorMap
      */
     public static function divisorMap(array $divisorMap): void
     {
@@ -29,6 +29,7 @@ class Interaction
 
     /**
      * @param int|float $number
+     * @param array<int, string>|null $divisorMap
      */
     public static function numberForHumans(
         $number,
