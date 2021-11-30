@@ -50,4 +50,9 @@ class InteractionList
      * @var string
      */
     public const BLOCK = 'block';
+
+    /**
+     * @var string
+     */
+    public const VISIT = 'visit';
 }
