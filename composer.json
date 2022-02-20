@@ -3,6 +3,11 @@
     "description": "The Laravel Interaction Support package",
     "keywords": ["laravel", "interaction", "support"],
     "license": "MIT",
+    "homepage": "https://github.com/laravel-interaction/support",
+    "support": {
+        "issues": "https://github.com/laravel-interaction/support/issues",
+        "source": "https://github.com/laravel-interaction/support"
+    },
     "authors": [
         {
             "name": "zingimmick",
