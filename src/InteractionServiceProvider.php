@@ -64,6 +64,6 @@ abstract class InteractionServiceProvider extends ServiceProvider
             return null;
         }
 
-        return dirname($fileName);
+        return \dirname($fileName);
     }
 }
