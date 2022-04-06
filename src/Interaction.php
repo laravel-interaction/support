@@ -29,6 +29,8 @@ class Interaction
 
     /**
      * @param int|float $number
+     * @phpstan-param 1|2|3|4 $mode
+     *
      * @param array<int, string>|null $divisorMap
      */
     public static function numberForHumans(
