@@ -9,7 +9,7 @@ class Interaction
     /**
      * @var array<int, string>
      */
-    private static $divisorMap = [
+    private static array $divisorMap = [
         1000 ** 0 => '',
         1000 ** 1 => 'K',
         1000 ** 2 => 'M',
@@ -28,24 +28,18 @@ class Interaction
     }
 
     /**
-     * @param int|float $number
      * @phpstan-param 1|2|3|4 $mode
      *
      * @param array<int, string>|null $divisorMap
      */
     public static function numberForHumans(
-        $number,
+        int|float $number,
         int $precision = 1,
         int $mode = PHP_ROUND_HALF_UP,
         ?array $divisorMap = []
     ): string {
         $divisorMap = $divisorMap ?: self::$divisorMap;
-        $divisors = array_filter(
-            array_keys($divisorMap),
-            static function ($divisor) use ($number): bool {
-                return $divisor <= abs($number);
-            }
-        );
+        $divisors = array_filter(array_keys($divisorMap), static fn ($divisor): bool => $divisor <= abs($number));
         $divisor = end($divisors) ?: 1;
         $suffix = $divisorMap[$divisor] ?? '';
         if ($divisor === 1) {
