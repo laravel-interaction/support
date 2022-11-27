@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace LaravelInteraction\Support\Tests;
 
-use Iterator;
 use LaravelInteraction\Support\Interaction;
 
 /**
@@ -28,7 +27,7 @@ final class InteractionTest extends TestCase
     /**
      * @return \Iterator<array{float|int, string, string, string, string}>
      */
-    public function data(): Iterator
+    public function data(): \Iterator
     {
         yield [0, '0', '0', '0', '0a'];
 

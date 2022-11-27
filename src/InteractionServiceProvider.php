@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace LaravelInteraction\Support;
 
 use Illuminate\Support\ServiceProvider;
-use ReflectionClass;
 
 abstract class InteractionServiceProvider extends ServiceProvider
 {
@@ -57,7 +56,7 @@ abstract class InteractionServiceProvider extends ServiceProvider
 
     private function path(): ?string
     {
-        $reflectionClass = new ReflectionClass(static::class);
+        $reflectionClass = new \ReflectionClass(static::class);
 
         $fileName = $reflectionClass->getFileName();
         if ($fileName === false) {
