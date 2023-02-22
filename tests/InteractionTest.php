@@ -27,7 +27,7 @@ final class InteractionTest extends TestCase
     /**
      * @return \Iterator<array{float|int, string, string, string, string}>
      */
-    public function data(): \Iterator
+    public static function data(): \Iterator
     {
         yield [0, '0', '0', '0', '0a'];
 
