@@ -33,7 +33,7 @@ class Interaction
      * @param array<int, string>|null $divisorMap
      */
     public static function numberForHumans(
-        int|float $number,
+        float|int $number,
         int $precision = 1,
         int $mode = PHP_ROUND_HALF_UP,
         ?array $divisorMap = []

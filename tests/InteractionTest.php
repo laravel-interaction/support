@@ -27,7 +27,7 @@ final class InteractionTest extends TestCase
     /**
      * @return \Iterator<array{float|int, string, string, string, string}>
      */
-    public static function data(): \Iterator
+    public static function provideNumberForHumanCases(): \Iterator
     {
         yield [0, '0', '0', '0', '0a'];
 
@@ -55,7 +55,7 @@ final class InteractionTest extends TestCase
     }
 
     /**
-     * @dataProvider data
+     * @dataProvider provideNumberForHumanCases
      */
     public function testNumberForHuman(
         float|int $actual,
