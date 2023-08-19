@@ -64,16 +64,13 @@ final class InteractionTest extends TestCase
         string $halfDown,
         string $universalSuffix
     ): void {
-        self::assertSame($onePrecision, Interaction::numberForHumans($actual, 1, PHP_ROUND_HALF_UP, self::DIVISORS));
-        self::assertSame($twoPrecision, Interaction::numberForHumans($actual, 2, PHP_ROUND_HALF_UP, self::DIVISORS));
-        self::assertSame($halfDown, Interaction::numberForHumans($actual, 2, PHP_ROUND_HALF_DOWN, self::DIVISORS));
+        $this->assertSame($onePrecision, Interaction::numberForHumans($actual, 1, PHP_ROUND_HALF_UP, self::DIVISORS));
+        $this->assertSame($twoPrecision, Interaction::numberForHumans($actual, 2, PHP_ROUND_HALF_UP, self::DIVISORS));
+        $this->assertSame($halfDown, Interaction::numberForHumans($actual, 2, PHP_ROUND_HALF_DOWN, self::DIVISORS));
         Interaction::divisorMap(self::DIVISORS);
-        self::assertSame($halfDown, Interaction::numberForHumans($actual, 2, PHP_ROUND_HALF_DOWN));
-        self::assertSame(
-            $universalSuffix,
-            Interaction::numberForHumans($actual, 2, PHP_ROUND_HALF_DOWN, [
-                1 => 'a',
-            ])
-        );
+        $this->assertSame($halfDown, Interaction::numberForHumans($actual, 2, PHP_ROUND_HALF_DOWN));
+        $this->assertSame($universalSuffix, Interaction::numberForHumans($actual, 2, PHP_ROUND_HALF_DOWN, [
+            1 => 'a',
+        ]));
     }
 }

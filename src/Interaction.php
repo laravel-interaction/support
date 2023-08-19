@@ -38,7 +38,7 @@ class Interaction
         int $mode = PHP_ROUND_HALF_UP,
         ?array $divisorMap = []
     ): string {
-        $divisorMap = $divisorMap ?: self::$divisorMap;
+        $divisorMap = $divisorMap !== null && $divisorMap !== [] ? $divisorMap : self::$divisorMap;
         $divisors = array_filter(array_keys($divisorMap), static fn ($divisor): bool => $divisor <= abs($number));
         $divisor = end($divisors) ?: 1;
         $suffix = $divisorMap[$divisor] ?? '';
