@@ -11,9 +11,6 @@ use LaravelInteraction\Support\Interaction;
  */
 final class InteractionTest extends TestCase
 {
-    /**
-     * @var array<int, string>
-     */
     private const DIVISORS = [
         1000 ** 0 => '',
         1000 ** 1 => 'K',
