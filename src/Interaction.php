@@ -28,9 +28,9 @@ class Interaction
     }
 
     /**
-     * @phpstan-param 1|2|3|4 $mode
-     *
      * @param array<int, string>|null $divisorMap
+     *
+     * @phpstan-param 1|2|3|4 $mode
      */
     public static function numberForHumans(
         float|int $number,
@@ -39,7 +39,7 @@ class Interaction
         ?array $divisorMap = []
     ): string {
         $divisorMap = $divisorMap !== null && $divisorMap !== [] ? $divisorMap : self::$divisorMap;
-        $divisors = array_filter(array_keys($divisorMap), static fn ($divisor): bool => $divisor <= abs($number));
+        $divisors = array_filter(array_keys($divisorMap), static fn (int $divisor): bool => $divisor <= abs($number));
         $divisor = end($divisors) ?: 1;
         $suffix = $divisorMap[$divisor] ?? '';
         if ($divisor === 1) {
